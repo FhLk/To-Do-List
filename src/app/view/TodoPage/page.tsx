@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useEffect } from 'react'
 import TodoList from "@/app/component/TodoPage/TodoList"
 
 function page() {

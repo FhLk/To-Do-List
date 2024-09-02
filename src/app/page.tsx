@@ -1,9 +1,9 @@
-import Image from "next/image";
+"use client"
 import TodoPage from "./view/TodoPage/page"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="h-full">
       <TodoPage/>
     </main>
   );
