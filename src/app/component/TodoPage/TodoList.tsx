@@ -1,15 +1,14 @@
 "use client"
 import React, { FC, useEffect, useRef, useState } from 'react'
 import { getAllData, getTodoList, TaskData, TodoData } from '../TodoAPI'
+import GroupDateList from './GroupDateList'
+
+export interface GroupedData {
+  [data: string]: TaskData[];
+}
 
 const TodoList: FC = () => {
   const [todos, setTodos] = useState<TaskData[]>([])
-  const [allData, setAllData] = useState<TodoData>({
-    tasks : [],
-    pageNumber : 1,
-    totalPages : 0,
-  })
-
   const [countScroll, setCountScroll] = useState<number>(0)
   const [loading, setLoading] = useState(false);
 
@@ -29,18 +28,13 @@ const TodoList: FC = () => {
     setCountScroll(countScroll + 1);
     setLoading(false);
   };
-
-  const fetchAllData = async () =>{
-    const data : TodoData = await getAllData()
-    setAllData(data);
-  }
   
   useEffect(() => {
-    fetchTodos()
-    fetchAllData()
-  }, [])
+    fetchTodos();
+  }, []);
 
   useEffect(()=>{
+    
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -55,11 +49,7 @@ const TodoList: FC = () => {
 
   return (
     <div className='h-screen'>
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>{todo.title}</li>
-        ))}
-      </ul>
+      <GroupDateList task={todos} />
       {loading && <div>Loading...</div>}
     </div>
   )
