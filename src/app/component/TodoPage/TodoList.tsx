@@ -47,9 +47,14 @@ const TodoList: FC = () => {
     console.log('Fetch more list items!');
   }
 
+  const deleteTask = (id : string) =>{
+    console.log(id);
+    setTodos(todos.filter((item,index)=>{return item.id !== id}))
+  }
+
   return (
-    <div className='h-screen'>
-      <GroupDateList task={todos} />
+    <div className='h-screen flex justify-center'>
+      <GroupDateList tasks={todos} onDeleteTask={deleteTask}/>
       {loading && <div>Loading...</div>}
     </div>
   )

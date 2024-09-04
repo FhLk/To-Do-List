@@ -7,19 +7,20 @@ interface GroupedData {
 }
 
 interface Props {
-    task: TaskData[];
+    tasks: TaskData[]
+    onDeleteTask: (taskId: string) => void;
 }
 
-const GroupDateList: FC<Props> = ({ task }) => {
+const GroupDateList: FC<Props> = ({ tasks, onDeleteTask } : Props) => {
 
     const [groupTask, setGroupTask] = useState<GroupedData>({} as GroupedData)
     
     useEffect(()=>{
         groupTodos()
-    },[task])
+    },[tasks])
     
     const groupTodos = () => {
-        const groupByDate: GroupedData = task.reduce((acc, todo) => {
+        const groupByDate: GroupedData = tasks.reduce((acc, todo) => {
           const formattedDate = moment(todo.createdAt).utc().format("L");
           if (!acc[formattedDate]) {
             acc[formattedDate] = [];
@@ -31,15 +32,22 @@ const GroupDateList: FC<Props> = ({ task }) => {
         setGroupTask(groupByDate);
       };
     
+    const handleDeleteClick = (id : string) => {
+        onDeleteTask(id);
+    };
+    
     return (
-        <div className=''>
+        <div className='w-[700px]'>
             {Object.keys(groupTask).map((groupKey) => (
                 <div key={groupKey} className=''>
                     <h3>{groupKey}</h3>
                     <ul>
                         {groupTask[groupKey].map((task) => (
-                            <li key={task.id}>
-                                <strong>{task.title}</strong>
+                            <li key={task.id} className='my-[10px]'>
+                                <div className='flex justify-between'>
+                                    <h3><strong>{task.title}</strong></h3>
+                                    <button onClick={() => handleDeleteClick(task.id)} className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l'>Delete</button>
+                                </div>
                             </li>
                         ))}
                     </ul>
