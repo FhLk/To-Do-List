@@ -1,6 +1,6 @@
 "use client"
-import React, { FC, useEffect, useRef, useState } from 'react'
-import { getAllData, getDoingList, getDoneList, getTodoList, TaskData, TodoData } from '../TodoAPI'
+import React, { FC, useEffect, useState } from 'react'
+import { getDoingList, getDoneList, getTodoList, TaskData } from '../TodoAPI'
 import GroupDateList from './GroupDateList'
 
 export interface GroupedData {
@@ -56,7 +56,6 @@ const TodoList: FC<Props> = ({status}) => {
         newTodos = []
         break;
     }
-    // const newTodos : TaskData[] = await getTodoList(countScroll)
     setTodos([...todos, ...newTodos]);
     setCountScroll(countScroll + 1);
     setLoading(false);
