@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import StatusBar from "./component/StatusBar";
+import StatusBar from "../components/StatusBar";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect } from 'react'
-import TodoList from "@/app/component/TodoPage/TodoList"
+import TodoList from "@/components/TodoPage/TodoList"
 
 function page() {
   return (
     <div>
-      <TodoList/>
+      <TodoList status='done'/>
     </div>
   )
 }

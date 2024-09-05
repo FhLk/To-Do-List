@@ -1,10 +1,10 @@
 "use client"
-import TodoPage from "./view/TodoPage/page"
+import Todo from "./todo/page"
 
 export default function Home() {
   return (
     <main className="h-full">
-      <TodoPage/>
+      <Todo/>
     </main>
   );
 }

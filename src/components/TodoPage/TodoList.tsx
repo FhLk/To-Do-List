@@ -1,21 +1,39 @@
 "use client"
 import React, { FC, useEffect, useRef, useState } from 'react'
-import { getAllData, getTodoList, TaskData, TodoData } from '../TodoAPI'
+import { getAllData, getDoingList, getDoneList, getTodoList, TaskData, TodoData } from '../TodoAPI'
 import GroupDateList from './GroupDateList'
 
 export interface GroupedData {
   [data: string]: TaskData[];
 }
 
-const TodoList: FC = () => {
+interface Props{
+  status: string
+}
+
+const TodoList: FC<Props> = ({status}) => {
   const [todos, setTodos] = useState<TaskData[]>([])
   const [countScroll, setCountScroll] = useState<number>(0)
   const [loading, setLoading] = useState(false);
 
 
-  const fetchTodos = async () => {
+  const fetchTodos = async (status : string) => {
+    let listData : TaskData[] = [];
     setLoading(true);
-    const listData: TaskData[] = await getTodoList()
+    switch (status) {
+      case "todo":
+        listData = await getTodoList()
+        break;
+      case "doing":
+        listData = await getDoingList()
+        break;
+      case "done":
+        listData = await getDoneList()
+        break
+      default:
+        listData = []
+        break;
+    }
     setTodos(listData)
     setCountScroll(countScroll + 1);
     setLoading(false);
@@ -30,7 +48,7 @@ const TodoList: FC = () => {
   };
   
   useEffect(() => {
-    fetchTodos();
+    fetchTodos(status);
   }, []);
 
   useEffect(()=>{
