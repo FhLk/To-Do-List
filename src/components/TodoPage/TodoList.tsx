@@ -66,18 +66,27 @@ const TodoList: FC<Props> = ({status}) => {
   }, []);
 
   useEffect(()=>{
-    
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     }
   },[todos])
 
+  // const handleScroll = () => {
+  //   if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+  //   console.log('Fetch more list items!');
+  // }
+
   const handleScroll = () => {
-    if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
-    fetchMoreTodos()
-    console.log('Fetch more list items!');
-  }
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+  
+    if (scrollTop + clientHeight >= scrollHeight){
+      fetchMoreTodos()
+      console.log('Fetch more list items!');
+    }
+  };
 
   const deleteTask = (id : string) =>{
     console.log(id);
@@ -85,9 +94,10 @@ const TodoList: FC<Props> = ({status}) => {
   }
 
   return (
-    <div className='h-screen flex justify-center'>
+    <div className='flex flex-col justify-center items-center'>
+      <h1 className='text-5xl font-bold py-5'>{status.toUpperCase()} List</h1>
       <GroupDateList tasks={todos} onDeleteTask={deleteTask}/>
-      {loading && <div>Loading...</div>}
+      {loading && <div>Loading...</div> }
     </div>
   )
 }

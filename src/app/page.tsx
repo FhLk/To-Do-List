@@ -4,9 +4,8 @@ import Login from "./login/page"
 
 export default function Home() {
   return (
-      <main className="h-screen">
-          <Login/>
-        {/* <Todo/> */}
+      <main className="h-full">
+        <Todo/>
       </main>
   );
 }
