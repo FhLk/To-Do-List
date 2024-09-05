@@ -8,9 +8,13 @@ const nextConfig = {
         PASSWORD : "COZY_Day"
     },
     output: "export",  // <=== enables static exports
+    distDir: "dist",
     reactStrictMode: true,
-    basePath: "/to-do-list"
-    
+    basePath: "/to-do-list",
+    images : {
+        unoptimized : true
+    }
+
 };
 
 export default nextConfig;
