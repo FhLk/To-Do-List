@@ -22,20 +22,20 @@ const StatusBar: FC = () => {
   return (
     <div className='flex justify-around'>
       <Link href={'/'}>
-          <button className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l'>
-            TODO
-          </button>
-      </Link> 
-        <Link href={'/doning'}>
-          <button className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l'>
-              DOING
-          </button>
-        </Link> 
-        <Link href={'/done'}>
-          <button className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l'>
+        <button className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l'>
+          TODO
+        </button>
+      </Link>
+      <Link href={'/doning'}>
+        <button className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l'>
+          DOING
+        </button>
+      </Link>
+      <Link href={'/done'}>
+        <button className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l'>
           DONE
-          </button>
-        </Link> 
+        </button>
+      </Link>
       <div className='fixed bottom-[10%] right-[20px]'>
         {showBackToTop && (
           <button className='bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l' onClick={handleBackToTop}> ^ </button>
