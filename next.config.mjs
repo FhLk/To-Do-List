@@ -7,6 +7,9 @@ const nextConfig = {
         USERNAME : "FhLk@pet-in.com",
         PASSWORD : "COZY_Day"
     },
+    output: "export",  // <=== enables static exports
+    reactStrictMode: true,
+    basePath: "/to-do-list"
 };
 
 export default nextConfig;
