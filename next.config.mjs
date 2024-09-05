@@ -6,7 +6,12 @@ const nextConfig = {
         DEFAULT_LIMIT : 10,
         USERNAME : "FhLk@pet-in.com",
         PASSWORD : "COZY_Day"
-    }
+    },
+    output: "export",
+    basePath: "/nextjs-github-pages",
+    images: {
+        unoptimized: true,
+      },
 };
 
 export default nextConfig;
