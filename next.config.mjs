@@ -9,7 +9,7 @@ const nextConfig = {
     },
     output: "export",  // <=== enables static exports
     reactStrictMode: true,
-    basePath: "/to-do-list",
+    // basePath: "/",
     images : {
         unoptimized : true
     }
