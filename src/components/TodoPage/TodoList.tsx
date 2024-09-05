@@ -40,8 +40,23 @@ const TodoList: FC<Props> = ({status}) => {
   }
 
   const fetchMoreTodos = async () => {
+    let newTodos : TaskData[] = []
     setLoading(true);
-    const newTodos : TaskData[] = await getTodoList(countScroll)
+    switch (status) {
+      case "todo":
+        newTodos = await getTodoList(countScroll)
+        break;
+      case "doing":
+        newTodos = await getDoingList(countScroll)
+        break;
+      case "done":
+        newTodos = await getDoneList(countScroll)
+        break
+      default:
+        newTodos = []
+        break;
+    }
+    // const newTodos : TaskData[] = await getTodoList(countScroll)
     setTodos([...todos, ...newTodos]);
     setCountScroll(countScroll + 1);
     setLoading(false);
