@@ -1,0 +1,52 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-a8d7df08920968c7.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-2686fb28fc5643e1.js",
+      "static/chunks/main-app-d04c66501983f070.js",
+      "static/chunks/app/_not-found/page-0cc4858ce7ae42a0.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-a8d7df08920968c7.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-2686fb28fc5643e1.js",
+      "static/chunks/main-app-d04c66501983f070.js",
+      "static/css/3cba943da571fa0c.css",
+      "static/chunks/119-71dce8b3154479fd.js",
+      "static/chunks/app/layout-4aa42063cdd70b6b.js"
+    ],
+    "/doning/page": [
+      "static/chunks/webpack-a8d7df08920968c7.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-2686fb28fc5643e1.js",
+      "static/chunks/main-app-d04c66501983f070.js",
+      "static/chunks/13b76428-7f9834f11c793e4f.js",
+      "static/chunks/app/doning/page-469daf8a53dbe211.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-a8d7df08920968c7.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-2686fb28fc5643e1.js",
+      "static/chunks/main-app-d04c66501983f070.js",
+      "static/chunks/13b76428-7f9834f11c793e4f.js",
+      "static/chunks/app/page-a84128851bd5ba06.js"
+    ],
+    "/todo/page": [
+      "static/chunks/webpack-a8d7df08920968c7.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-2686fb28fc5643e1.js",
+      "static/chunks/main-app-d04c66501983f070.js",
+      "static/chunks/13b76428-7f9834f11c793e4f.js",
+      "static/chunks/app/todo/page-eb9d3c8fd4879467.js"
+    ],
+    "/done/page": [
+      "static/chunks/webpack-a8d7df08920968c7.js",
+      "static/chunks/fd9d1056-2737f78bfff3f6bf.js",
+      "static/chunks/23-2686fb28fc5643e1.js",
+      "static/chunks/main-app-d04c66501983f070.js",
+      "static/chunks/13b76428-7f9834f11c793e4f.js",
+      "static/chunks/app/done/page-16232dd622dc6c07.js"
+    ]
+  }
+}
